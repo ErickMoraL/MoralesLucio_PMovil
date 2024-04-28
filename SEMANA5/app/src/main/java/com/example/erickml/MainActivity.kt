@@ -1,54 +1,55 @@
 package com.example.erickml
 
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var btnAccept: Button
-    private lateinit var textview1: TextView
     private lateinit var nombre: EditText
     private lateinit var apellido: EditText
-    private lateinit var textView: TextView
+    private lateinit var telefono: EditText
+    private lateinit var email: EditText
+    private lateinit var palomita: ImageView
+    private lateinit var tache: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        /*
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
-        */
 
-        textView = findViewById(R.id.textView)
         nombre = findViewById(R.id.nombre)
         apellido = findViewById(R.id.apellido)
-        apellido.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(s: Editable) {}
-            override fun beforeTextChanged(
-                s: CharSequence, start: Int,
-                count: Int, after: Int
-            ) {
-            }
+        telefono = findViewById(R.id.telefono)
+        email = findViewById(R.id.email)
+        btnAccept = findViewById(R.id.btnAccept)
+        palomita = findViewById(R.id.palomita)
+        tache = findViewById(R.id.tache)
 
-            override fun onTextChanged(
-                s: CharSequence, start: Int,
-                before: Int, count: Int
-            ) {
-                textView.text = apellido.text
+
+        palomita.visibility = View.INVISIBLE
+        tache.visibility = View.INVISIBLE
+
+
+        btnAccept.setOnClickListener {
+            val nombreText = nombre.text.toString()
+            val apellidoText = apellido.text.toString()
+            val telefonoText = telefono.text.toString()
+            val emailText = email.text.toString()
+
+            if (nombreText.isNotEmpty() && apellidoText.isNotEmpty() && telefonoText.isNotEmpty() && emailText.isNotEmpty()) {
+
+                palomita.visibility = View.VISIBLE
+                tache.visibility = View.INVISIBLE
+            } else {
+
+                palomita.visibility = View.INVISIBLE
+                tache.visibility = View.VISIBLE
             }
-        })
+        }
     }
 }
