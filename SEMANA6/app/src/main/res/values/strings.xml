@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">SEMANA6</string>
+
+    <string name="encabezado_esp">Selecciona tu lenguaje</string>
+    <string name="encabezado_ing">Select your language</string>
+    <string name="encabezado_fra">choisissez votre langue</string>
+    <string name="encabezado_ita">seleziona la tua lingua</string>
+    <string name="encabezado_chi">选择你的语言</string>
+    <string name="encabezado_por">selecione sua lingua</string>
+
+    <string name="boton_esp">PROXIMO</string>
+    <string name="boton_ing">NEXT</string>
+    <string name="boton_fra">SUIVANT</string>
+    <string name="boton_ita">PROSSIMO</string>
+    <string name="boton_chi">下一个</string>
+    <string name="boton_por">PRÓXIMO</string>
+
+    <string name="bienvenida_esp">Bienvenido</string>
+    <string name="bienvenida_ing">Welcome</string>
+    <string name="bienvenida_fra">Accueillir</string>
+    <string name="bienvenida_ita">Benvenuto</string>
+    <string name="bienvenida_chi">欢迎</string>
+    <string name="bienvenida_por">Bem-vindo</string>
+
+</resources>
